@@ -16,10 +16,10 @@ import javax.swing.JRadioButton;
 public class Quiz_Form extends javax.swing.JFrame {
 
     
-    String[] questions = {"1 + 1 = ?","3 - 3 = ?","5 + 5 = ?","10 X 9 = ?","100 - 50 = ?"};
+    String[] questions = {"625 / 25 = ?","100 - 3 = ?","250 X 5 = ?","75 + 85 = ?","100 - 50 = ?"};
     // the last item is the correct answer
     // we will check the selected answer from the user with the last item
-    String[][] options = {{"100","9","2","0","2"},{"15","7","0","11","0"},{"20","10","50","5","10"},{"80","70","90","100","90"},{"60","50","40","25","50"}};
+    String[][] options = {{"23","27","25","20","25"},{"95","97","103","99","97"},{"1200","1350","1250","1500","1250"},{"160","180","170","150","160"},{"60","50","40","25","50"}};
     int index = 0, correct = 0;
     
     ButtonGroup bg = new ButtonGroup();
@@ -160,7 +160,7 @@ public class Quiz_Form extends javax.swing.JFrame {
 
     private void jButton_Next_QActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Next_QActionPerformed
         
-        if(jButton_Next_Q.getText().equals("Restart The Quiz"))
+        if(jButton_Next_Q.getText().equals("Restart The Quiz Again"))
         {
             // restart the quiz
             jButton_Next_Q.setText("Next");
@@ -172,7 +172,7 @@ public class Quiz_Form extends javax.swing.JFrame {
         if(index == questions.length)
         {
             // display the user score
-            Lbl_Question.setText("Your Score: " + correct + " / " + questions.length);
+            Lbl_Question.setText("You Scored: " + correct + " / " + questions.length);
             if(correct >= (float) questions.length/2)
             {
                jPanel_Q_Container.setBackground(Color.green);
@@ -181,7 +181,7 @@ public class Quiz_Form extends javax.swing.JFrame {
                 jPanel_Q_Container.setBackground(Color.red);
             }
             
-            jButton_Next_Q.setText("Restart The Quiz");
+            jButton_Next_Q.setText("Restart The Quiz Again");
         }
         
         else{
@@ -196,7 +196,7 @@ public class Quiz_Form extends javax.swing.JFrame {
              jRadioButton4_.setText(options[index][3]);
              
              if(index == questions.length-1){
-                 jButton_Next_Q.setText("Finish and See The Result");
+                 jButton_Next_Q.setText("Submit and See The Result");
              }
             
         }
